@@ -3,11 +3,15 @@ package com.example.ijgapis;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import io.github.cdimascio.dotenv.Dotenv;
+
 @SpringBootApplication
-public class IjgapisApplication {
-
+public class IjgApplication {
     public static void main(String[] args) {
-        SpringApplication.run(IjgapisApplication.class, args);
+        Dotenv dotenv = Dotenv.configure().load();
+        dotenv.entries().forEach(entry ->
+            System.setProperty(entry.getKey(), entry.getValue())
+        );
+        SpringApplication.run(IjgApplication.class, args);
     }
-
 }
