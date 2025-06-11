@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/news")
-@CrossOrigin(origins = "https://research-portal-final.vercel.app")
+@CrossOrigin(origins = "*")
 public class NewsController {
 
     @Autowired
