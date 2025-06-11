@@ -51,7 +51,7 @@ public class DocumentService {
         Files.copy(file.getInputStream(), filePath);
 
         // Generate a public URL for the file
-        String fileUrl = "http://localhost:8080/api/documents/view/" + fileName;
+        String fileUrl = "https://ijgapis-soci.onrender.com/api/documents/view/" + fileName;
 
         // Create document entity
         Document document = new Document();
@@ -128,7 +128,7 @@ public Resource loadFileAsResource(String fileName) throws MalformedURLException
             Path filePath = Paths.get(UPLOAD_DIR).resolve(fileName);
             Files.copy(file.getInputStream(), filePath);
 
-            String fileUrl = "http://localhost:8080/api/documents/view/" + fileName;
+            String fileUrl = "https://ijgapis-soci.onrender.com/api/documents/view/" + fileName;
             existingDocument.setFileUrl(fileUrl);
             existingDocument.setFileType(file.getContentType());
         }
