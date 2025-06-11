@@ -20,7 +20,7 @@ import java.util.List;
 @RestController
 //
 @RequestMapping("/api/documents")
-@CrossOrigin(origins = {"https://ijg-research-admin.vercel.app", "http://localhost:3000"},
+@CrossOrigin(origins = {"https://research-portal-final.vercel.app", "https://research-portal-final.vercel.app/"},
     allowedHeaders = "*", 
     methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}, 
     exposedHeaders = {"Content-Disposition", "Content-Type"}, 
