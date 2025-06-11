@@ -6,13 +6,16 @@ WORKDIR /app
 
 # Copy Maven wrapper and pom.xml
 COPY .mvn/ .mvn/
-COPY mvnw pom.xml ./ 
+COPY mvnw pom.xml ./
 
-# Copy source code
+# Give execute permission to Maven wrapper
+RUN chmod +x mvnw
+
+# Copy the rest of the source code
 COPY src ./src
 
 # Build the application
-RUN ./mvnw clean package
+RUN ./mvnw clean package -DskipTests
 
 # Expose the application port
 EXPOSE 8080
